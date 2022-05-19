@@ -1,8 +1,11 @@
-body {
+html {
   background-color: #333333;
   color: white;
 }
 h1 {
+  color: white;
+}
+td {
   color: white;
 }
 p {
@@ -10,4 +13,13 @@ p {
 }
 input {
   vertical-align: middle;
+}
+.UIContainer {
+  width: fit-content;
+  float: left;
+}
+main {
+  width: fit-content;
+  float: left;
+  padding-inline: 10px;
 }

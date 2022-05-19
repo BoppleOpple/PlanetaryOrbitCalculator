@@ -10,9 +10,61 @@
     <title>Planetary Orbit Calculator :D</title>
   </head>
   <body>
-    <div>
-      <input type="file" placeholder="CSV of time and angle data (Mercury by default)" accept=".csv" id="CSV Input">
-      <input onclick="" type="submit" value="Recalculate" id="submit">
+    <main></main>
+    <div class="UIContainer">
+      <div>
+        <input type="file" placeholder="CSV of time and angle data (Mercury by default)" accept=".csv" id="CSV Input" disabled>
+        <input onclick="" type="submit" value="Recalculate" id="submit">
+      </div>
+      <table id="results">
+        <tr>
+          <td class="data"><b>Semi-major axis (a): </b></td>
+          <td class="result" id="a"></td>
+        </tr>
+        <tr>
+          <td class="data"><b>Semi-minor axis (b): </b></td>
+          <td class="result" id="b"></td>
+        </tr>
+        <tr>
+          <td class="data"><b>Eccentricity (e): </b></td>
+          <td class="result" id="e"></td>
+        </tr>
+        <tr>
+          <td class="data"><b>Orbital period (T): </b></td>
+          <td class="result" id="period"></td>
+        </tr>
+      </table>
+      <div id="RenderList" class="scrollList">
+        <input type="text" class="searchbar" placeholder="Search for element" title="Calculation to display">
+        <ul id="Drawing">
+          <li><label>Initial Diagram:</label></li>
+          <ol>
+            <li><label>Earth's orbital circle: </label><input type="checkbox" id="YearCircle" datatype="ellipse" class="renderToggle" checked="true"></li>
+            <li><label>Month markers: </label><input type="checkbox" id="MonthLines" datatype="line[]" class="renderToggle" checked="true"></li>
+            <li><label>Sun: </label><input type="checkbox" id="Sun" datatype="point" class="renderToggle" checked="true"></li>
+          </ol>
+          <li><label>Finding Ellipse:</label></li>
+          <ol>
+            <li><label>Sun-Earth rays: </label><input type="checkbox" id="SunEarth"  datatype="line[]" class="renderToggle" checked="true"></li>
+            <li><label>Earth Positions: </label><input type="checkbox" id="Earth" datatype="point[]" class="renderToggle"></li>
+            <li><label>Earth's observations of the planet: </label><input type="checkbox" id="Tangents" datatype="line[]" class="renderToggle" checked="true"></li>
+            <li><label>Polygon containing the planet's orbit: </label><input type="checkbox" id="Polygon" datatype="line[]" class="renderToggle"></li>
+            <li><label>Polygon midpoints (Approximation of points on the ellipse): </label><input type="checkbox" id="Midpoints" datatype="point[]" class="renderToggle"></li>
+            <li><label>Reflections of lines from the sun to midpoints (Second focus <i>should</i> lie on this line): </label><input type="checkbox" id="Reflections" datatype="line[]" class="renderToggle"></li>
+            <li><label>Possible foci (Intersection of every combination of 2 reflections): </label><input type="checkbox" id="Foci" datatype="point[]" class="renderToggle"></li>
+            <li><label>"Most accurate" focus: </label><input type="checkbox" id="Focus" datatype="point" class="renderToggle"></li>
+            <li><label>Major axis: </label><input type="checkbox" id="Major" datatype="line" class="renderToggle" checked="true"></li>
+            <li><label>Minor axis: </label><input type="checkbox" id="Minor" datatype="line" class="renderToggle" checked="true"></li>
+            <li><label>Center: </label><input type="checkbox" id="Center" datatype="point" class="renderToggle"></li>
+            <li><label>Orbit: </label><input type="checkbox" id="Orbit" datatype="ellipse" class="renderToggle" checked="true"></li>
+          </ol>
+          <li><label>Orbital Period Stuff:</label></li>
+          <ol>
+            <li><label>Farthest consecutive measurements of the planet: </label><input type="checkbox" id="LongestConsecutive" datatype="point[]" class="renderToggle"></li>
+            <li><label>Arc between those positions: </label><input type="checkbox" id="HalfYear" datatype="arc" class="renderToggle" checked="true"></li>
+          </ol>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
