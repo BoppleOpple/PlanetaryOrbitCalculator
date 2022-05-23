@@ -13,25 +13,25 @@
     <main></main>
     <div class="UIContainer">
       <div>
-        <input type="file" placeholder="CSV of time and angle data (Mercury by default)" accept=".csv" id="CSV Input" disabled>
-        <input onclick="" type="submit" value="Recalculate" id="submit">
+        <!-- <input type="file" placeholder="CSV of time and angle data (Mercury by default)" accept=".csv" id="CSV Input" disabled> -->
+        <input type="submit" value="Recalculate" id="submit">
       </div>
-      <table id="results">
-        <tr>
-          <td class="data"><b>Semi-major axis (a): </b></td>
-          <td class="result" id="a"></td>
+      <table id="results" class="dataTable">
+        <th>Variable</th>
+        <th>Mesured Value</th>
+        <th>Expected Value</th>
+        <th>Relative Error</th>
+        <tr id="a">
+          <td><b>Semi-major axis (a)</b></td>
         </tr>
-        <tr>
-          <td class="data"><b>Semi-minor axis (b): </b></td>
-          <td class="result" id="b"></td>
+        <tr id="b">
+          <td><b>Semi-minor axis (b)</b></td>
         </tr>
-        <tr>
-          <td class="data"><b>Eccentricity (e): </b></td>
-          <td class="result" id="e"></td>
+        <tr id="e">
+          <td><b>Eccentricity (e)</b></td>
         </tr>
-        <tr>
-          <td class="data"><b>Orbital period (T): </b></td>
-          <td class="result" id="period"></td>
+        <tr id="t">
+          <td><b>Orbital period (T)</b></td>
         </tr>
       </table>
       <div id="RenderList" class="scrollList">
@@ -65,6 +65,27 @@
           </ol>
         </ul>
       </div>
+    </div>
+    <div class="Assignment">
+      <h2 width="100%" class="LineAbove">Assigned Work:</h2>
+      <h3>Kepler's 2<sup>nd</sup> Law:</h3>
+      <table id="SecondLaw" class="dataTable">
+        <th>A<sub>n</sub> (AU)</th>
+        <th>T<sub>n</sub> (Days)</th>
+        <th>A<sub>n</sub> / T<sub>n</sub> (AU/day)</th>
+      </table>
+      <h3 width="100%" class="LineAbove">Kepler's 3<sup>rd</sup> Law:</h3>
+      <table id="ThirdLaw" class="dataTable">
+        <th>Planet</th>
+        <th>S.P. <br> <small>(Years)</small></th>
+        <th>S-M.A. <br> <small>(AU)</small></th>
+        <th>(S.P.)<sup>2</sup> <br> <small>(Years<sup>2</sup>)</small></th>
+        <th>(S-M.A.)<sup>3</sup> <br> <small>(AU<sup>3</sup>)</small></th>
+        <th>(S.P.)<sup>2</sup> / (S-M.A.)<sup>3</sup> <br> <small>(Years<sup>2</sup> / AU<sup>3</sup>)</small></th>
+      </table>
+      <h4 id="ThirdLawStats"></h4>
+      <h3 width="100%" class="LineAbove">S.P.<sup>2</sup> = S-M.A.<sup>3</sup></h3>
+      <h4><input type="number" placeholder="Sidereal Period" id="SiderealPeriod"> Years = <input type="number" placeholder="Semi-Major Axis" id="SemiMajorAxis"> AU</h4>
     </div>
   </body>
 </html>

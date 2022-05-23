@@ -2,24 +2,33 @@ html {
   background-color: #333333;
   color: white;
 }
-h1 {
-  color: white;
-}
-td {
-  color: white;
-}
-p {
-  color: white;
-}
 input {
   vertical-align: middle;
 }
 .UIContainer {
   width: fit-content;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
 }
 main {
   width: fit-content;
-  float: left;
+  display: inline-block;
   padding-inline: 10px;
+}
+.dataTable, .dataTable th, .dataTable td {
+  border: 2px solid #ffffff;
+  border-collapse: collapse;
+  padding: 5px;
+}
+th {
+  text-align: center;
+}
+.dataTable {
+  border-color: #ffffff;
+  border-width: 2px;
+  padding: 3px;
+}
+.LineAbove {
+  border-top: 1px solid #ffffff;
+  padding-top: 6px;
 }
